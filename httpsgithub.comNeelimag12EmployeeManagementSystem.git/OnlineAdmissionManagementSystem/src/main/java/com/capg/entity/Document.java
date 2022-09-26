@@ -6,6 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 @Entity
 @Table
 public class Document {
@@ -31,42 +39,5 @@ public class Document {
 		this.emailId = emailId;
 		this.documentStatus = documentStatus;
 	}
-	public int getDocumentId() {
-		return documentId;
-	}
-	public void setDocumentId(int documentId) {
-		this.documentId = documentId;
-	}
-	public String getDocumentName() {
-		return documentName;
-	}
-	public void setDocumentName(String documentName) {
-		this.documentName = documentName;
-	}
-	public String getDocumentUrl() {
-		return documentUrl;
-	}
-	public void setDocumentUrl(String documentUrl) {
-		this.documentUrl = documentUrl;
-	}
-	public int getApplicationId() {
-		return applicationId;
-	}
-	public void setApplicationId(int applicationId) {
-		this.applicationId = applicationId;
-	}
-	public String getEmailId() {
-		return emailId;
-	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
-	}
-	public String getDocumentStatus() {
-		return documentStatus;
-	}
-	public void setDocumentStatus(String documentStatus) {
-		this.documentStatus = documentStatus;
-	}
 	
-
 }

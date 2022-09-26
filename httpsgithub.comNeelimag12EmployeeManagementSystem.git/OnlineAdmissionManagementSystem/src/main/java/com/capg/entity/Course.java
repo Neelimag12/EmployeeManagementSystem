@@ -12,6 +12,15 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 @Entity
 @Table
 public class Course {
@@ -41,37 +50,5 @@ public class Course {
 		this.college = college;
 		this.branches = branches;
 	}
-	public int getCourseId() {
-		return courseId;
-	}
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
-	}
-	public String getCourseName() {
-		return courseName;
-	}
-	public void setCourseName(String courseName) {
-		this.courseName = courseName;
-	}
-	public String getEligiblity() {
-		return eligiblity;
-	}
-	public void setEligiblity(String eligiblity) {
-		this.eligiblity = eligiblity;
-	}
-	public College getCollege() {
-		return college;
-	}
-	public void setCollege(College college) {
-		this.college = college;
-	}
-	public ArrayList<Branch> getBranches() {
-		return branches;
-	}
-	public void setBranches(ArrayList<Branch> branches) {
-		this.branches = branches;
-	}
 	
-	
-
 }

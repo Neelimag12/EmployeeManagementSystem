@@ -11,6 +11,15 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+ 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 @Entity
 @Table
 public class College {
@@ -53,48 +62,4 @@ public class College {
 		this.branchList = branchList;
 		this.university = university;
 	}
-	public int getCollegeRegId() {
-		return collegeRegId;
 	}
-	public void setCollegeRegId(int collegeRegId) {
-		this.collegeRegId = collegeRegId;
-	}
-	public String getCollegeName() {
-		return collegeName;
-	}
-	public void setCollegeName(String collegeName) {
-		this.collegeName = collegeName;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	public ArrayList<Program> getProgramList() {
-		return programList;
-	}
-	public void setProgramList(ArrayList<Program> programList) {
-		this.programList = programList;
-	}
-	public ArrayList<Course> getCourseList() {
-		return courseList;
-	}
-	public void setCourseList(ArrayList<Course> courseList) {
-		this.courseList = courseList;
-	}
-	public ArrayList<Branch> getBranchList() {
-		return branchList;
-	}
-	public void setBranchList(ArrayList<Branch> branchList) {
-		this.branchList = branchList;
-	}
-	public University getUniversity() {
-		return university;
-	}
-	public void setUniversity(University university) {
-		this.university = university;
-	}
-	
-
-}

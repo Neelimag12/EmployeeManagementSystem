@@ -9,6 +9,14 @@
 	import javax.persistence.ManyToOne;
 	import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+	
+	@Data
+	@NoArgsConstructor
+	@AllArgsConstructor
+
 	@Entity
 	@Table
 	public class Branch {
@@ -36,26 +44,7 @@
 			this.branchName = branchName;
 			this.branchDescription = branchDescription;
 		}
-		public int getBranchId() {
-			return branchId;
-		}
-		public void setBranchId(int branchId) {
-			this.branchId = branchId;
-		}
-		public String getBranchName() {
-			return branchName;
-		}
-		public void setBranchName(String branchName) {
-			this.branchName = branchName;
-		}
-		public String getBranchDescription() {
-			return branchDescription;
-		}
-		public void setBranchDescription(String branchDescription) {
-			this.branchDescription = branchDescription;
-		}
 		
-
 	}
 
 

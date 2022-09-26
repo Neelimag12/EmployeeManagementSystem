@@ -6,8 +6,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 @Entity
+@Table
 public class Program {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,36 +41,5 @@ public class Program {
 		this.duration = duration;
 		this.degreedOffered = degreedOffered;
 	}
-	public int getProgramId() {
-		return programId;
-	}
-	public void setProgramId(int programId) {
-		this.programId = programId;
-	}
-	public String getProgranName() {
-		return progranName;
-	}
-	public void setProgranName(String progranName) {
-		this.progranName = progranName;
-	}
-	public String getEligibilty() {
-		return eligibilty;
-	}
-	public void setEligibilty(String eligibilty) {
-		this.eligibilty = eligibilty;
-	}
-	public String getDuration() {
-		return duration;
-	}
-	public void setDuration(String duration) {
-		this.duration = duration;
-	}
-	public String getDegreedOffered() {
-		return degreedOffered;
-	}
-	public void setDegreedOffered(String degreedOffered) {
-		this.degreedOffered = degreedOffered;
-	}
 	
-
 }

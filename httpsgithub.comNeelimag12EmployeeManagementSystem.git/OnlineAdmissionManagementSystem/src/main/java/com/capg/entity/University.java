@@ -7,7 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 @Entity
+@Table
 public class University {
 	private String name;
 	@Id
@@ -33,30 +43,4 @@ public class University {
 		this.address = address;
 		this.collegeList = collegeList;
 	}
-	public String getName() {
-		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getUniversityId() {
-		return universityId;
-	}
-	public void setUniversityId(int universityId) {
-		this.universityId = universityId;
-	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
-	public ArrayList<College> getCollegeList() {
-		return collegeList;
-	}
-	public void setCollegeList(ArrayList<College> collegeList) {
-		this.collegeList = collegeList;
-	}
-	
-
-}

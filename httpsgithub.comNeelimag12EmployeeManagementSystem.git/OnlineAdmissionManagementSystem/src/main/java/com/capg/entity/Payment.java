@@ -9,8 +9,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
 
 @Entity
+@Table
 public class Payment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -39,53 +50,5 @@ public class Payment {
 		this.paymentDate = paymentDate;
 		this.paymentStatus = paymentStatus;
 	}
-	public int getPaymentId() {
-		return paymentId;
-	}
-	public void setPaymentId(int paymentId) {
-		this.paymentId = paymentId;
-	}
-	public String getEmailId() {
-		return emailId;
-	}
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
-	}
-	public String getApplicationId() {
-		return applicationId;
-	}
-	public void setApplicationId(String applicationId) {
-		this.applicationId = applicationId;
-	}
-	public double getPaymentAmount() {
-		return paymentAmount;
-	}
-	public void setPaymentAmount(double paymentAmount) {
-		this.paymentAmount = paymentAmount;
-	}
-	public String getPaymentDescription() {
-		return paymentDescription;
-	}
-	public void setPaymentDescription(String paymentDescription) {
-		this.paymentDescription = paymentDescription;
-	}
-	public LocalDate getPaymentDate() {
-		return paymentDate;
-	}
-	public void setPaymentDate(LocalDate paymentDate) {
-		this.paymentDate = paymentDate;
-	}
-	public String getPaymentStatus() {
-		return paymentStatus;
-	}
-	public void setPaymentStatus(String paymentStatus) {
-		this.paymentStatus = paymentStatus;
-	}
 	
-	@PrePersist
-	public void paymentDate() {
-		paymentDate=LocalDate.now();
-	}
-	
-
 }
