@@ -1,7 +1,8 @@
 package com.capg.service;
 
-import java.lang.System.Logger;
+
 import java.util.List;
+import java.util.Optional;
 
 import org.hibernate.annotations.common.util.impl.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +11,15 @@ import org.springframework.stereotype.Service;
 import com.capg.entity.Application;
 import com.capg.entity.ApplicationStatus;
 import com.capg.exception.ApplicationNotFoundException;
+import com.capg.exception.EmailNotFoundException;
+import com.capg.exception.IdNotFoundException;
 import com.capg.repository.ApplicationRepository;
 
 @Service
 public class ApplicationServiceImpl implements ApplicationService {
 
 
-	private static final Logger log = (Logger)LoggerFactory.logger(ApplicationServiceImpl.class);
+	
 	
 	@Autowired
 	private ApplicationRepository applicationrepository;
@@ -24,37 +27,56 @@ public class ApplicationServiceImpl implements ApplicationService {
 	
 	public List<Application> viewAllApplicationDetails(Application application) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return applicationrepository.findAll();
 	}
 
 	@Override
 	public Application getApplicationByemailId(int email_Id) throws ApplicationNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		return ;
 	}
 
 	@Override
 	public Application addApplication(Application application) {
 		// TODO Auto-generated method stub
-		return null;
+		return applicationrepository.save(application);
 	}
 
 	@Override
 	public List<Application> getApplicationByStatus(ApplicationStatus status) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Application deleteApplicationById(int app_Id) throws ApplicationNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public void deleteApplicationById(int app_Id) throws ApplicationNotFoundException {
+		
+		Optional<Application> application =	applicationrepository.findById(app_Id);
+		if(application.isPresent())
+		{
+			applicationrepository.deleteById(app_Id);
+		
+		}
+		else
+			throw new IdNotFoundException("id is not present");
+		
+	
+			
+		}
+	
 
 	@Override
-	public Application deleteApplicationByemailId(int email_Id) throws ApplicationNotFoundException {
+	public void deleteApplicationByemailId(int email_Id) throws ApplicationNotFoundException {
 		// TODO Auto-generated method stub
-		return null;
+		Optional<Application> application =	applicationrepository.findApplicationByemailId(email_Id);
+		if(application.isPresent())
+		{
+			applicationrepository.deleteById(email_Id);
+		}
+		else
+			throw new EmailNotFoundException("email id is not found");
+			
+		
 	}
 
 	@Override

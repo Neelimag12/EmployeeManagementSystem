@@ -15,15 +15,15 @@ public interface ApplicationService {
 	
 	public List<Application> viewAllApplicationDetails(Application application);
 	
-	public Application getApplicationByemailId(int email_Id ) throws ApplicationNotFoundException;
+	public void getApplicationByemailId(int email_Id ) throws ApplicationNotFoundException;
 	
 	public Application addApplication(Application application);
 	
 	public List<Application> getApplicationByStatus(ApplicationStatus status);
 	
-	public Application deleteApplicationById(int app_Id ) throws ApplicationNotFoundException;
+	public void deleteApplicationById(int app_Id ) throws ApplicationNotFoundException;
 	
-	public Application deleteApplicationByemailId(int email_Id ) throws ApplicationNotFoundException;
+	public void deleteApplicationByemailId(int email_Id ) throws ApplicationNotFoundException;
 	
 	public Application getApplicationById(int app_Id ) throws ApplicationNotFoundException;
 	
