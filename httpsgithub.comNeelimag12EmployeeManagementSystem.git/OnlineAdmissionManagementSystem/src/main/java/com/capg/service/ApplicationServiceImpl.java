@@ -16,7 +16,7 @@ import com.capg.repository.ApplicationRepository;
 public class ApplicationServiceImpl implements ApplicationService {
 
 
-	private static final Logger log = LoggerFactory.getLogger(ApplicationServiceImpl.class);
+	private static final Logger log = (Logger)LoggerFactory.logger(ApplicationServiceImpl.class);
 	
 	@Autowired
 	private ApplicationRepository applicationrepository;

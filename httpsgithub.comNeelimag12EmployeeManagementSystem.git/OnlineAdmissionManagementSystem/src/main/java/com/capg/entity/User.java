@@ -1,54 +1,79 @@
 package com.capg.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.capg.dto.UserDTO;
 
 @Entity
-@Table(name="User_tbl")
-
 public class User {
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="User_id")
-	private Integer userId;
+	private int userId;
 	
-	@Column(name="User_firstname")
-	private String fname;
-	
-
-	@Column(name="User_middlename")
-	private String mname;
-	
-	@Column(name="User_lastname")
-	private String lname;
-	
-	@Column(name="User_email")
+	private String firstName;
+	private String middleName;
+	private String lastName;
 	private String email;
+	private String mobileNumber;
+	private String aadharCardNo;
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public User(int userId, String firstName, String middleName, String lastName, String email, String mobileNumber,
+			String aadharCardNo) {
+		super();
+		this.userId = userId;
+		this.firstName = firstName;
+		this.middleName = middleName;
+		this.lastName = lastName;
+		this.email = email;
+		this.mobileNumber = mobileNumber;
+		this.aadharCardNo = aadharCardNo;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getMiddleName() {
+		return middleName;
+	}
+	public void setMiddleName(String middleName) {
+		this.middleName = middleName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+	public String getAadharCardNo() {
+		return aadharCardNo;
+	}
+	public void setAadharCardNo(String aadharCardNo) {
+		this.aadharCardNo = aadharCardNo;
+	}
 	
 
-	@Column(name="User_mob_no")
-	private String mob_no;
-	
-
-	@Column(name="Aadhar_no")
-	private String aadhar_no;
-
-  public User(UserDTO userDTO) {
-	  
-	  this.userId=userDTO.getUserId();
-		this.fname=userDTO.getFname();
-		this.mname=userDTO.getMname();
-		this.lname=userDTO.getLname();
-	  
-	  
-	  
-  }
-	
 }
